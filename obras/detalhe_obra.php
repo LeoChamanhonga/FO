@@ -189,7 +189,7 @@
     <span style="font-size: 16px; font-weight: bold;">Colaboradores na Obra</span>
     <div data-container="">
         <?php 
-        $mysqlve =mysqli_query($conexao,"SELECT * FROM obra_andamento WHERE codigo_obra = '$ids_obra' ORDER BY CAST(codigo_obra AS INTEGER) ASC");
+        $mysqlve =mysqli_query($conexao,"SELECT * FROM obra_andamento WHERE codigo_obra = '$ids_obra' ORDER BY CAST(codigo_obra AS UNSIGNED) ASC");
         $numr= mysqli_num_rows($mysqlve);
 
         if ($numr <= 0) {

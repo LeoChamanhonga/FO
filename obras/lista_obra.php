@@ -145,7 +145,7 @@ $limite = 20;
 $pagina= isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
 $inicio = ($pagina - 1) * $limite;
 @$id = $_GET['id'];
-$mysqlshow = mysqli_query($conexao,"SELECT * FROM obra WHERE status = 'ativo' ORDER BY CAST(codigo AS INTEGER) ASC LIMIT $inicio, $limite");
+$mysqlshow = mysqli_query($conexao,"SELECT * FROM obra WHERE status = 'ativo' ORDER BY CAST(codigo AS UNSIGNED) ASC LIMIT $inicio, $limite");
 while ($rows= mysqli_fetch_assoc($mysqlshow)) {
                        // code...
                    

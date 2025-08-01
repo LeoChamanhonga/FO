@@ -19,7 +19,7 @@ $sql = "SELECT DISTINCT hora_extra_obra.id_extra, hora_extra_obra.codigo_obra_ex
 FROM hora_extra_obra 
 JOIN colaborador ON hora_extra_obra.id_colaborador_extra = colaborador.id_colaborador 
 JOIN obra ON hora_extra_obra.codigo_obra_extra = obra.codigo 
-WHERE codigo_obra_extra = '$obra' ORDER BY CAST(codigo_obra_extra AS INTEGER) ASC";
+WHERE codigo_obra_extra = '$obra' ORDER BY CAST(codigo_obra_extra AS UNSIGNED) ASC";
 $result = $conn->query($sql);
 
 // Cria uma nova planilha
