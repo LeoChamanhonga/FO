@@ -32,7 +32,7 @@ class Html extends BaseReader
 
     private const STARTS_WITH_BOM = '/^(?:\xfe\xff|\xff\xfe|\xEF\xBB\xBF)/';
 
-    private const DECLARES_CHARSET = '/\\bcharset=/i';
+    private const DECLARES_CHARSET = '/\bcharset=/i';
 
     /**
      * Input encoding.
@@ -1031,7 +1031,7 @@ class Html extends BaseReader
         $name = $attributes['alt'] ?? null;
 
         $drawing = new Drawing();
-        $drawing->setPath($src, false);
+        $drawing->setPath($src, false, allowExternal: $this->allowExternalImages);
         if ($drawing->getPath() === '') {
             return;
         }
